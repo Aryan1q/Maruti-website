@@ -67,7 +67,7 @@ nav a.active {
   color: #e63946;
 }
 .quote-btn {
-  background: #e63946;
+  background: red;
   color: white;
   padding: 10px 20px;
   border-radius: 3px;
@@ -75,7 +75,7 @@ nav a.active {
   text-decoration: none;
 }
 .quote-btn:hover {
-  background-color: red;
+  background-color: rgba(255, 0, 0, 0.181);
   transition: 0.5s;
 }
 
@@ -291,7 +291,7 @@ body.intro-complete .hero {
 }
 .stats-left {
   flex: 1;
-  background: red;
+  background: rgb(178, 14, 14);
   color: white;
   padding: 40px;
   min-width: 300px;
@@ -596,7 +596,7 @@ a {
 }
 .contact-intro p {
   font-size: 1.1rem;
-  color: #555;
+  color: White;
 }
 
 /* Form Section */
@@ -633,6 +633,7 @@ a {
   font-weight: 600;
   border-radius: 4px;
   cursor: pointer;
+  margin-bottom : 70px;
 }
 .submit-button:hover {
   background: #005bb5;
@@ -643,16 +644,39 @@ a {
   background: white;
   padding: 40px 0;
 }
+
+.contact-text{
+  color : white;
+  margin-top : 70px;
+  background-image: url('https://t3.ftcdn.net/jpg/02/11/30/96/360_F_211309661_3AB6liBo23vt6tdmt8Tg4R0qnQCPFdD8.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width : 100%;
+  padding : 50px;
+  font-size: 25px;
+  margin-bottom : 50px;
+}
+
+.map{
+  margin-top: 50px;
+}
+.query{
+  color : white;
+}
+
 .info-block {
   margin-bottom: 20px;
+  color :antiquewhite;
 }
 .info-block h3 {
   font-size: 1.2rem;
   margin-bottom: 8px;
+  color : antiquewhite;
 }
 .info-block p {
   font-size: 1rem;
-  color: #555;
+  color: antiquewhite;
 }
 
 /* Footer */
