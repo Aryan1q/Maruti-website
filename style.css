@@ -102,14 +102,14 @@ nav a.active {
   font-weight: bold;
   font-size: 18px;
   margin-bottom: 10px;
-  animation-duration: 7s;
+  animation-duration: 9s;
   animation-name: slideInLeft;
 }
 .hero h1 {
   font-size: 3rem;
   line-height: 1.1;
   margin-bottom: 15px;
-  animation-duration: 7s;
+  animation-duration: 9s;
   animation-name: slideInLeft;
 }
 .description {
@@ -117,7 +117,7 @@ nav a.active {
   line-height: 1.5;
   max-width: 800px;
   margin-bottom: 25px;
-  animation-duration: 7s;
+  animation-duration: 9s;
   animation-name: slideInLeft;
 }
 
@@ -204,35 +204,6 @@ body.intro-complete .hero {
 .hero-buttons .btn {
   margin-right: 15px;
 }
-
-@keyframes spin{
-  0%{
-
-  }
-
-  50%{
-    scale : 1;
-    transform : rotate(0);
-    border-radius: 0;
-  }
-
-  100%{
-    transform: rotate(360deg);
-    border-radius:50%;
-  }
-}
-
-@keyframes slideInLeft {
-  from 
-  { transform: translateX(-100%); 
-    opacity: 0; 
-  }
-  to 
-  {
-     transform: translateX(0); opacity: 1; 
-  }
-}
-
  @keyframes bounce {
   0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
   40% { transform: translateY(-30px); }
@@ -242,9 +213,6 @@ body.intro-complete .hero {
 .bounce {
   animation: bounce 1s;
 }
-
-
-
 /* Buttons */
 .btn {
   padding: 12px 25px;
