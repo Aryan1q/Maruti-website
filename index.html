@@ -7,13 +7,64 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-</head>
-<body>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
 
+  <style>
+    /* Intro Logo Animation Styles */
+    .intro {
+      position: fixed;
+      inset: 0;
+      background: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .intro-logo {
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      animation: spin 2s linear forwards, burst 1s ease-out 2s forwards;
+      margin-left : 200px;
+    }
+
+    body:not(.intro-complete) .top-bar,
+    body:not(.intro-complete) .header,
+    body:not(.intro-complete) .hero {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    body.intro-complete .top-bar,
+    body.intro-complete .header,
+    body.intro-complete .hero {
+      opacity: 1;
+      transition: opacity 1s ease;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(720deg); }
+    }
+
+    @keyframes burst {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(10); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+ 
+ <!-- 🌟 Intro Logo Animation -->
+
+<div class="intro" id = "intro">
+  <div class="intro-content">
+    <img src="https://m.media-amazon.com/images/S/stores-image-uploads-eu-prod/b/AmazonStores/A21TJRUUN4KGV/f805322daab50f917debe30ba24cf7d3.w400.h400.png" alt="Intro Logo" class="intro-logo" />
+    <div class="intro-text">MARUTI ENTERPRISES</div>
+  </div>
+</div>
   <!-- 🌐 Top Bar -->
   <section class="top-bar">
     <div class="container">
@@ -30,7 +81,7 @@
   <!-- 🔻 Header / Navbar -->
   <section class="header">
     <div class="container navbar">
-      <img class = "Maruti_logo" src ="https://m.media-amazon.com/images/S/stores-image-uploads-eu-prod/b/AmazonStores/A21TJRUUN4KGV/f805322daab50f917debe30ba24cf7d3.w400.h400.png">
+      <img class="Maruti_logo" src="https://m.media-amazon.com/images/S/stores-image-uploads-eu-prod/b/AmazonStores/A21TJRUUN4KGV/f805322daab50f917debe30ba24cf7d3.w400.h400.png">
       <div class="logo">MARUTI ENTERPRISES</div>
       <nav>
         <a href="#" class="active">Home</a>
@@ -48,9 +99,9 @@
   <!-- 🏗️ Hero Section -->
   <section class="hero" id="hero">
     <div class="hero-overlay"></div>
-    <div class="hero-content container" >
-      <section class="bg-paragraph-section" ></section>
-      <p class="welcome" ><strong>Welcome to MARUTI ENTERPRISES</strong></p>
+    <div class="hero-content container">
+      <section class="bg-paragraph-section"></section>
+      <p class="welcome"><strong>Welcome to MARUTI ENTERPRISES</strong></p>
       <h1>YOUR TRUSTED<br>CONSTRUCTION PARTNER</h1>
       <p class="description">
         Discover Excellence in Construction Solutions with MARUTI ENTERPRISES. We specialize in mechanical and civil projects,
@@ -63,6 +114,35 @@
       </div>
     </div>
   </section>
+
+  <!-- 🔧 JavaScript Section -->
+  <script>
+    // Scroll-triggered bounce
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('bounce');
+          entry.target.addEventListener('animationend', () => {
+            entry.target.classList.remove('bounce');
+          }, { once: true });
+        }
+      });
+    });
+    const target = document.querySelector('.box-to-bounce');
+    if (target) observer.observe(target);
+
+    // Intro logo animation logic
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.querySelector('.intro').style.display = 'none';
+        document.body.classList.add('intro-complete');
+      }, 3000);
+    });
+  </script>
+
+</body>
+</html>
+
 
   <!-- 📊 Stats Section -->
   <section class="stats" id="stats">
